@@ -34,6 +34,12 @@
 
                     <p>Já tem uma conta? <a href="#" onclick="toggleForms()">Clque aqui para fazer login</a></p>
 
+                    <div class="error">
+                        {% if error_cadastro %}
+                            <p>{{ error_cadastro }}</p>
+                        {% endif %}
+                    </div>
+
                     <button id="btn_cadastro" onclick="spineer_cadastro()">Finalizar</button>
 
                     <div class="load" id="load_cadastro">
@@ -63,6 +69,12 @@
     
                         <p>Não tem uma conta? <a href="#" onclick="toggleForms()">Clque aqui para fazer cadastro</a></p>
     
+                        <div class="error">
+                            {% if error_login %}
+                                <p>{{ error_login }}</p>
+                            {% endif %}
+                        </div>
+
                         <button id="btn_login" onclick="spineer_login()">Finalizar</button>
 
                         <div class="load" id="load_login">

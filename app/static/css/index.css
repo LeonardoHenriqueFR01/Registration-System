@@ -41,6 +41,20 @@ body {
     transition: transform .8s ease-in-out;
 }
 
+/* Confgurações mensagem de error formulários */
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error > p {
+    font-size: 1.3em;
+
+    color: red;
+}
+
 /* Efeit de troca de formulário */
 
 .active {
