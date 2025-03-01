@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary-color: ;
+    --secundary-color: ;
+    --button-color: #8338EC;
+    --button-hover: #461d80;
+    --link-color: ;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../imagens/background-photo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.container {
+    width: 600px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    width: 200%;
+    height: 100%;
+    overflow: hidden;
+
+    position: relative;
+    transition: transform .8s ease-in-out;
+}
+
+/* Efeit de troca de formulário */
+
+.active {
+    transform: translateX(-50%);
+}
+
+/* Conmfigurações form cadastro */
+
+.content > .cadastro {
+    height: 500px;
+    width: 600px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: #ffffff50;
+    backdrop-filter: blur(10px);
+}
+
+.content > .cadastro > h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+
+    color: #fff;
+}
+
+.content > .cadastro > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .cadastro > form > label {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+
+    color: #fff;
+}
+
+.content > .cadastro > form > input {
+    padding: .7em;
+    font-size: 1.3em;
+    outline: none;
+}
+
+.content > .cadastro > form > p {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 13px 0px;
+    text-align: center;
+    
+    color: #fff;
+}
+
+.content > .cadastro > form > p > a {
+    text-decoration: none;
+}
+
+.content > .cadastro > form > button {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .7em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    color: #fff;
+    background-color: var(--button-color);
+}
+
+.content > .cadastro > form > button:hover {
+    transition: 1.3s;
+    background-color: var(--button-hover);
+}
+
+/* Configurações form login */
+
+.content > .login {
+    height: 500px;
+    width: 600px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: #ffffff50;
+    backdrop-filter: blur(10px);
+}
+
+.content > .login > h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+
+    color: #fff;
+}
+
+.content > .login > form {
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .login > form > label {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 20px;
+
+    color: #fff;
+}
+
+.content > .login > form > input {
+    padding: .7em;
+    font-size: 1.3em;
+    outline: none;
+}
+
+.content > .login > form > p {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 13px 0px;
+    text-align: center;
+    
+    color: #fff;
+}
+
+.content > .login > form > p > a {
+    text-decoration: none;
+}
+
+.content > .login > form > button {
+    font-size: 1.7em;
+    font-weight: bold;
+    padding: .7em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 50px;
+
+    color: #fff;
+    background-color: var(--button-color);
+}
+
+.content > .login > form > button:hover {
+    transition: 1.3s;
+    background-color: var(--button-hover);
+}
+
+/* Configurações spineer */
+
+#load_cadastro, #load_login {
+    display: none;
+}
+
+.load > button {
+    padding: .7em;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    margin-top: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--button-color);
+}
+
+.load > button > .spineer { 
+    height: 40px;
+    width: 40px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+
+    animation-name: spineer;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* Keyframe spineer */
+
+@keyframes spineer {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Keyframe para form cadastro e login */
+
+@keyframes rotateForm {
+    0% {
+        transform: translateX(0);        
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
