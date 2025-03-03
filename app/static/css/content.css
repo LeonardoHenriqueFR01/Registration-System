@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --primary-color: #3D518C;
+    --secundary-color: #333333;
+    --button-color: #8338EC;
+    --button-hover: #461d80;
+    --border-color: #8447FF;
+    --users-color: #2D82B7;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-color);
+}
+
+
+.container > .content > .cadastrar {
+    height: 300px;
+    width: 900px;
+    padding: 1em;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--secundary-color);
+
+    display: none;
+}
+
+.container > .content > .cadastrar > h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+
+    color: #fff;
+}
+
+.container > .content > .cadastrar > form {
+    margin-top: 30px;
+}
+
+.container > .content > .cadastrar > form > label {
+    font-size: 1.7em;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-right: 10px;
+
+    color: #fff;
+}
+
+.container > .content > .cadastrar > form > input {
+    padding: .7em;
+    font-size: 1.3em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #fff;
+
+    color: #fff;
+    outline: none;
+}
+
+.container > .content > .cadastrar > form > input:focus {
+    transition: .8s;
+    border-bottom-color: var(--border-color);
+}
+
+.container > .content > .cadastrar > form > button {
+    padding: .9em;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+
+    color: #fff;
+    background-color: var(--button-color);
+} 
+
+.container > .content > .cadastrar > form > button:hover {
+    transition: .8s;
+    background-color: var(--button-hover);    
+}
+
+.container > .content > .cadastrar > button {
+    padding: .7em;
+    font-size: 1.5em;
+    width: 250px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 40px;
+
+    color: #fff;
+    background-color: var(--button-color);
+}
+
+.container > .content > .cadastrar > button:hover {
+    transition: .8s;
+    background-color: var(--button-hover);
+}
+
+/* Configurações cadastrados */
+
+.container > .content > .cadastrados {
+    height: 300px;
+    width: 900px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: var(--secundary-color);
+}
+
+.container > .content > .cadastrados > h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+
+    color: #fff;
+}
+
+.container > .content > .cadastrados > .info_users > .titles {
+    display: flex;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: 1px solid #fff;
+    margin-top: 20px;
+
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.container > .content > .cadastrados > .info_users > ul > li {
+    list-style: none;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    color: #fff;
+}
