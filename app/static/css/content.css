@@ -35,7 +35,6 @@
 
     background-color: var(--secundary-color);
 
-    display: none;
 }
 
 .container > .content > .cadastrar > h1 {
@@ -115,12 +114,14 @@
 /* Configurações cadastrados */
 
 .container > .content > .cadastrados {
-    height: 300px;
+    height: 500px;
     width: 900px;
     padding: 1em;
     border-radius: 15px;
 
     background-color: var(--secundary-color);
+
+    display: none;
 }
 
 .container > .content > .cadastrados > h1 {
@@ -131,8 +132,27 @@
     color: #fff;
 }
 
+.container > .content > .cadastrados > button {
+    padding: .7em;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    color: #fff;
+    background-color: var(--button-color);
+}
+
+.container > .content > .cadastrados > button:hover {
+    transition: .8s;
+    background-color: var(--button-hover);
+}
+
 .container > .content > .cadastrados > .info_users > .titles {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     font-size: 1.3em;
     font-weight: bold;
     border: 1px solid #fff;
@@ -142,16 +162,28 @@
     color: #fff;
 }
 
-.container > .content > .cadastrados > .info_users > .table > .info-name > ul > li, .info-age > ul > li {
+.container > .content > .cadastrados > .info_users > .table > .info-name > ul > li, .info-age > ul > li, .info-remove > ul > li {
     list-style: none;
-    font-size: 1.7em;
+    font-size: 2em;
     font-weight: bold;
-   
+    text-align: center;
+    border: 2px solid #fff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-top: 10px;
+    
     color: #fff;
+}
+
+.container > .content > .cadastrados > .info_users > .table > .info-age {
+    margin-right: 40px;
 }
 
 .container > .content > .cadastrados > .info_users > .table {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-right: 15px;
+    
 }

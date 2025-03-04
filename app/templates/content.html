@@ -17,7 +17,7 @@
 
         <div class="content">
 
-            <div class="cadastrar">
+            <div class="cadastrar" id="cadastrar">
 
                 <h1>Cadastrar</h1>
 
@@ -33,13 +33,15 @@
 
                 </form>
 
-                <button class="vies_user">Cadastrados</button>
+                <button class="vies_user" onclick="cadastrados_get()">Cadastrados</button>
 
             </div>
 
-            <div class="cadastrados">
+            <div class="cadastrados" id="cadastrados">
 
                 <h1>Cadastrados</h1>
+
+                <button onclick="cadastrar_get()">Voltar</button>
 
                 <div class="info_users">
 
@@ -48,6 +50,8 @@
                         <h1>Nome</h1>
 
                         <h1>Idade</h1>
+
+                        <h1>Deletar</h1>
 
                     </div>
 
@@ -78,7 +82,16 @@
                         <div class="info-remove">
 
                             <a href="#">
-                                <img src="../static/imagens/lixeira.png" alt="Imagem de um lixeira">
+
+                                <ul>
+                                    {% for user in users %}
+                                        <li>
+                                            {{ user.id }}
+                                            <img src="../static/imagens/lixeira.png" width="50px" alt="Imagem de um lixeira">
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+
                             </a>
 
                         </div>

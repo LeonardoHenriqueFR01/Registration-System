@@ -81,7 +81,7 @@ def cadastrar_user():
     
     if request.method == 'POST':
         name = request.form.get('name')
-        age = request.form.get('email')
+        age = request.form.get('age')
 
         new_info = Info(name=name, age=age, user_id=current_user.id)
         db.session.add(new_info)
