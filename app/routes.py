@@ -72,3 +72,21 @@ def login():
             return render_template('index.html', error_login=error_message)
         
     return render_template('index.html')
+
+
+# Rota para fazer cadastro de usuários
+@main.route('/cadastrar_user', methods=['GET', 'POST'])
+@login_required
+def cadastrar_user():
+    
+    if request.method == 'POST':
+        name = request.form.get('name')
+        age = request.form.get('email')
+
+        new_info = Info(name=name, age=age, user_id=current_user.id)
+        db.session.add(new_info)
+        db.session.commit()
+
+        return redirect(url_for('main.sucess'))
+    
+    return render_template('content.html')
