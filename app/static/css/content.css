@@ -142,10 +142,16 @@
     color: #fff;
 }
 
-.container > .content > .cadastrados > .info_users > ul > li {
+.container > .content > .cadastrados > .info_users > .table > .info-name > ul > li, .info-age > ul > li {
     list-style: none;
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: bold;
-
+   
     color: #fff;
+}
+
+.container > .content > .cadastrados > .info_users > .table {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
