@@ -1,107 +1,71 @@
 <!DOCTYPE html>
 
-<html lang="pt-brd">
+<html lang="pt-br">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Content</title>
+    <title>Document</title>
     <link rel="stylesheet" href="../static/css/content.css">
 
 </head>
 
 <body>
-
+    
     <div class="container">
 
-        <div class="content">
+        <div class="cadastrar" id="cadastrar">
 
-            <div class="cadastrar" id="cadastrar">
+            <h1>Cadastrar</h1>
 
-                <h1>Cadastrar</h1>
+            <form action="/cadastrar_user" method="POST" autocomplete="off">
 
-                <form action="/cadastrar_user" method="POST" autocomplete="off">
+                <label for="name">Nome:</label>
+                <input type="text" name="name" id="name" required placeholder="Digite o nome aqui">
 
-                    <label for="name">Nome:</label>
-                    <input type="name" name="name" id="name" required placeholder="Digite seu nome aqui">
+                <label for="age">Idade:</label>
+                <input type="number" name="age" id="age" required placeholder="Digite a idade aqui">
 
-                    <label for="age">Idade:</label>
-                    <input type="number" name="age" id="age" required placeholder="Digite sua idade aqui">
+                <button>Cadastrar</button>
 
-                    <button>Cadastrar</button>
+            </form>
 
-                </form>
+        </div>
 
-                <button class="vies_user" onclick="cadastrados_get()">Cadastrados</button>
+        <div class="cadastrados" id="cadastrados">
+
+            <h1>Cadastrados</h1>
+
+            <div class="title">
+
+                <h1>Nome</h1>
+
+                <h1>Idade</h1>
 
             </div>
 
-            <div class="cadastrados" id="cadastrados">
+            {% for user in users %}
+                <div class="users-info">
 
-                <h1>Cadastrados</h1>
+                    <div class="info-name">
 
-                <button onclick="cadastrar_get()">Voltar</button>
-
-                <div class="info_users">
-
-                    <div class="titles">
-
-                        <h1>Nome</h1>
-
-                        <h1>Idade</h1>
-
-                        <h1>Deletar</h1>
+                        <ul>
+                            <li>{{ user.name }}</li>
+                        </ul>
 
                     </div>
 
-                    <div class="table">
-                    
-                        <div class="info-name">
-                        
-                            <ul>
-                                {% for user in users %}
-                                    <li>{{ user.name }}</li>
-                                {% endfor %}                                
-                            </ul>
-                        
-                        </div>
-                    
-                        <div class="info-age">
-                    
-                            <ul>
-                    
-                                {% for user in users %}
-                                    <li>{{ user.age }}</li>
-                                {% endfor %} 
-                                
-                            </ul>
-                    
-                        </div>
+                    <div class="info-age">
 
-                        <div class="info-remove">
+                        <ul>
+                            <li>{{ user.age }}</li>
+                        </ul>
 
-                            <a href="#">
-
-                                <ul>
-                                    {% for user in users %}
-                                        <li>
-                                            {{ user.id }}
-                                            <img src="../static/imagens/lixeira.png" width="50px" alt="Imagem de um lixeira">
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-
-                            </a>
-
-                        </div>
-                    
                     </div>
 
                 </div>
-
-            </div>
-
+            {% endfor %}
         </div>
 
     </div>

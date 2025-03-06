@@ -10,7 +10,7 @@
     --secundary-color: ;
     --button-color: #8338EC;
     --button-hover: #461d80;
-    --link-color: ;
+    --link-color: #8447FF;
 }
 
 body {
@@ -111,6 +111,8 @@ body {
 
 .content > .cadastro > form > p > a {
     text-decoration: none;
+
+    color: var(--link-color);
 }
 
 .content > .cadastro > form > button {

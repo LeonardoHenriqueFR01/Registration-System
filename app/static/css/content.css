@@ -23,108 +23,20 @@
     background-color: var(--primary-color);
 }
 
+/* Configurações área de cadastrar */
 
-.container > .content > .cadastrar {
-    height: 300px;
+.cadastrar {
+    height: 250px;
     width: 900px;
-    padding: 1em;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    background-color: var(--secundary-color);
-
-}
-
-.container > .content > .cadastrar > h1 {
-    font-size: 3em;
-    font-weight: 900;
-    text-align: center;
-
-    color: #fff;
-}
-
-.container > .content > .cadastrar > form {
-    margin-top: 30px;
-}
-
-.container > .content > .cadastrar > form > label {
-    font-size: 1.7em;
-    font-weight: bold;
-    margin-left: 40px;
-    margin-right: 10px;
-
-    color: #fff;
-}
-
-.container > .content > .cadastrar > form > input {
-    padding: .7em;
-    font-size: 1.3em;
-    background-color: transparent;
-    border: none;
-    border-bottom: 3px solid #fff;
-
-    color: #fff;
-    outline: none;
-}
-
-.container > .content > .cadastrar > form > input:focus {
-    transition: .8s;
-    border-bottom-color: var(--border-color);
-}
-
-.container > .content > .cadastrar > form > button {
-    padding: .9em;
-    font-size: 1.5em;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    margin-left: 40px;
-    cursor: pointer;
-
-    color: #fff;
-    background-color: var(--button-color);
-} 
-
-.container > .content > .cadastrar > form > button:hover {
-    transition: .8s;
-    background-color: var(--button-hover);    
-}
-
-.container > .content > .cadastrar > button {
-    padding: .7em;
-    font-size: 1.5em;
-    width: 250px;
-    font-weight: bold;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 40px;
-
-    color: #fff;
-    background-color: var(--button-color);
-}
-
-.container > .content > .cadastrar > button:hover {
-    transition: .8s;
-    background-color: var(--button-hover);
-}
-
-/* Configurações cadastrados */
-
-.container > .content > .cadastrados {
-    height: 500px;
-    width: 900px;
     padding: 1em;
-    border-radius: 15px;
 
     background-color: var(--secundary-color);
 
     display: none;
 }
 
-.container > .content > .cadastrados > h1 {
+.cadastrar > h1 {
     font-size: 3em;
     font-weight: 900;
     text-align: center;
@@ -132,58 +44,76 @@
     color: #fff;
 }
 
-.container > .content > .cadastrados > button {
+.cadastrar > form {
+    margin-top: 40px;
+}
+
+.cadastrar > form > label {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-right: 20px;
+
+    color: #fff;
+}
+
+.cadastrar > form > input {
+    padding: .7em;
+    font-size: 1.5em;
+    outline: none;
+    margin-right: 15px;
+    border: none;
+    border-bottom: 2px solid #fff;
+ 
+    background-color: transparent;
+    color: #fff;
+}
+
+.cadastrar > form > input:focus {
+    transition: .9s;
+    border-bottom-color: var(--border-color);
+}
+
+.cadastrar > form > button {
     padding: .7em;
     font-size: 1.5em;
     font-weight: bold;
     border: none;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
+    margin-left: 30px;
 
     color: #fff;
     background-color: var(--button-color);
 }
 
-.container > .content > .cadastrados > button:hover {
-    transition: .8s;
+.cadastrar > form > button:hover {
+    transition: 0.8s;
     background-color: var(--button-hover);
 }
 
-.container > .content > .cadastrados > .info_users > .titles {
+/* Configurações área de cadastrados */
+
+.cadastrados {
+    width: 900px;
+    padding: 1em;
+    border-radius: 15px;
+
+    background-color: var(--secundary-color);
+}
+
+.cadastrados > h1 {
+    font-size: 3em;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 15px;
+
+    color: #fff;
+}
+
+.cadastrados > .title {
     display: flex;
-    align-items: center;
     justify-content: space-around;
-    font-size: 1.3em;
-    font-weight: bold;
-    border: 1px solid #fff;
-    margin-top: 20px;
 
     background-color: var(--primary-color);
     color: #fff;
-}
-
-.container > .content > .cadastrados > .info_users > .table > .info-name > ul > li, .info-age > ul > li, .info-remove > ul > li {
-    list-style: none;
-    font-size: 2em;
-    font-weight: bold;
-    text-align: center;
-    border: 2px solid #fff;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    margin-top: 10px;
-    
-    color: #fff;
-}
-
-.container > .content > .cadastrados > .info_users > .table > .info-age {
-    margin-right: 40px;
-}
-
-.container > .content > .cadastrados > .info_users > .table {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-right: 15px;
-    
 }
