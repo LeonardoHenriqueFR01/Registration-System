@@ -3,10 +3,11 @@
 <html lang="pt-br">
 
 <head>
- 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../static/css/index.css">
 
 </head>
@@ -19,74 +20,92 @@
 
             <div class="cadastro" id="cadastro">
 
-                <h1>Cadastro</h1>
+                <h1>Cadastrar-se</h1>
 
                 <form action="/cadastro" method="POST" autocomplete="off">
 
-                    <label for="name">Nome:</label>
-                    <input type="text" name="name" id="name" required minlength="3" placeholder="Digite seu nome aqui">
+                    <div class="name-container">
+                        <input type="text" name="name" id="name" required minlength="3" placeholder=" ">
+                        <label for="name">Seu nome</label>
+                    </div>
 
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" id="email" required minlength="12" placeholder="Digite seu email aqui">
+                    <div class="email-container">
+                        <input type="email" name="email" id="email" required minlength="12" placeholder=" ">
+                        <label for="email">Seu email</label>
+                    </div>
 
-                    <label for="password">Senha:</label>
-                    <input type="password" name="password" id="password" minlength="8" maxlength="20" placeholder="Digite sua senha aqui">
+                    <div class="password-container">
+                        <input type="password" name="password" id="password" required minlength="8" maxlength="20" placeholder=" ">
+                        <label for="password">Sua senha</label>
+                        <span class="material-symbols-outlined" id="toggle-password" onclick="togglePassword('password', this)">Visibility_off</span>
+                    </div>
 
-                    <p>Já tem uma conta? <a href="#" onclick="toggleForms()">Clique aqui para fazer login</a></p>
+                    <p>Já tem uma conta? <a href="#" onclick="toggleForms()">LOGIN</a></p>
 
                     <div class="error">
                         {% if error_cadastro %}
                             <p>{{ error_cadastro }}</p>
                         {% endif %}
                     </div>
-
-                    <button id="btn_cadastro" onclick="spineer_cadastro()">Finalizar</button>
+                    
+                    <button id="btn_cadastro" onclick="spin_cadastro()">Finalizar</button>
 
                     <div class="load" id="load_cadastro">
+
                         <button>
-                            <div class="spineer"></div>
+                            <div class="spin"></div>
                         </button>
+
                     </div>
 
                 </form>
 
             </div>
 
-                <div class="login" id="login">
+            <div class="login" id="login">
 
-                    <h1>Login</h1>
-    
-                    <form action="/login" method="POST" autocomplete="off">
-    
-                        <label for="name_login">Nome:</label>
-                        <input type="text" name="name_login" id="name_login" required minlength="3" placeholder="Digite seu nome aqui">
-    
-                        <label for="email_login">Email:</label>
-                        <input type="email" name="email_login" id="email_login" required minlength="12" placeholder="Digite seu email aqui">
-    
-                        <label for="password_login">Senha:</label>
-                        <input type="password" name="password_login" id="password_login" minlength="8" maxlength="20" placeholder="Digite sua senha aqui">
-    
-                        <p>Não tem uma conta? <a href="#" onclick="toggleForms()">Clique aqui para fazer cadastro</a></p>
-    
-                        <div class="error">
-                            {% if error_login %}
-                                <p>{{ error_login }}</p>
-                            {% endif %}
-                        </div>
+                <h1>Login</h1>
 
-                        <button id="btn_login" onclick="spineer_login()">Finalizar</button>
+                <form action="/login" method="POST" autocomplete="off">
 
-                        <div class="load" id="load_login">
-                            <button>
-                                <div class="spineer"></div>
-                            </button>
-                        </div>
-    
-                    </form>
-    
-                </div>
+                    <div class="name-container">
+                        <input type="text" name="name_login" id="name_login" required minlength="3" placeholder=" ">
+                        <label for="name_login">Seu nome</label>
+                    </div>
 
+                    <div class="email-container">
+                        <input type="email" name="email_login" id="email_login" required minlength="12" placeholder=" ">
+                        <label for="email_login">Seu email</label>
+                    </div>
+
+                    <div class="password-container">
+                        <input type="password_login" name="password_login" id="password_login" required minlength="8" maxlength="20" placeholder=" ">
+                        <label for="password_login">Sua senha</label>
+                        <span class="material-symbols-outlined" id="toggle-password" onclick="togglePassword('password_login', this)">Visibility_off</span>
+                    </div>
+
+                    <p>Não tem uma conta? <a href="#" onclick="toggleForms()">CADASTRAR</a></p>
+
+                    <div class="error">
+                        {% if error_login %}
+                            <p>{{ error_login }}</p>
+                        {% endif %}
+                    </div>
+                    
+                    <button id="btn_login" onclick="spin_login()">Finalizar</button>
+
+                    <div class="load" id="load_login">
+
+                        <button>
+                            <div class="spin"></div>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        
         </div>
 
     </div>
