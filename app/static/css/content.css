@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato, sans-serif;
+
+}
+
+:root {
+    --first-color: #FF9F1C;
+    --second-color: #FFFFFF;
+    --third-color: #CBF3F0;
+    --room-color: #2EC4B6;
+    --fifth-color: #171219;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../imagens/background-photo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Configurações área de cadastro de usuário */
+
+.cadastro {
+    height: 200px;
+    width: 700px;
+    padding: 1em;
+    border-radius: 15px;
+
+    border: 3px solid var(--room-color);
+    background-color: var(--fifth-color);
+    color: var(--second-color);
+}
+
+.cadastro > .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.cadastro > .header > h1 {
+    font-size: 3.2em;
+    font-weight: 900;
+    text-align: center;
+}
+
+.cadastro > .header > a {
+    text-decoration: none;
+    
+    color: var(--second-color);
+}
+
+.cadastro > .header > a > span {
+    cursor: pointer;
+}
+
+.cadastro > form {
+    display: flex;
+    margin-top: 50px;
+}
+
+.cadastro > form > button {
+    padding: .7em;
+    font-size: 1.3em;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    color: var(--second-color);
+    background-color: var(--room-color);
+}
+
+.cadastro > form > button:hover {
+    transition: .8s;
+
+    background-color: var(--first-color);
+}
+
+/* Configurações input moderno */
+
+.name-container, .age-container {
+    position: relative;
+}
+
+input {
+    padding: .7em;
+    width: 90%;
+    font-size: 1.3em;
+    outline: none;
+    border: 2px solid var(--room-color);
+    margin-right: 50px;
+
+    background-color: transparent;
+    color: var(--second-color);
+}
+
+label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3em;
+    transition: .3s ease-in-out;
+    padding: .3em;
+
+    color: #999;
+    background-color: var(--fifth-color);
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: 0;
+}
+
+/* Configurações button spin */
+
+#load {
+    display: none;
+}
+
+.load > button {
+    padding: .1em;
+    font-size: 1.3em;
+    width: 200px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    color: var(--second-color);
+    background-color: var(--room-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load > button > .spin {
+    height: 40px;
+    width: 40px;
+    border: 2px solid var(--second-color);
+    border-radius: 50%;
+    border-bottom-color: transparent;
+
+    animation-name: spin;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+/* Configurações keyframe button spin */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* Configurações área de cadastrados */
+
+.cadastrados {
+    width: 600px;
+    padding: 1em;
+    border-radius: 15px;
+
+    color: var(--second-color);
+    border: 3px solid var(--room-color);
+    background-color: var(--fifth-color);
+}
+
+.cadastrados > h1 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 900;
+}
+
+.cadastrados > .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+    border: 1px solid var(--room-color);
+}
+
+.cadastrados > .title > #delete {
+    color: var(--first-color);
+}
+
+.cadastrados > .info-users {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding: .3em;
+
+    border: 3px solid var(--first-color);
+    background-color: var(--second-color);
+    color: var(--fifth-color);
+}
+
+ul > li {
+    list-style: none;
+    font-size: 1.7em;
+}
+
+ul > .info-name {
+    margin-left: 50px;
+}
+
+ul .info-age {
+    text-align: center;
+}
+
+ul > .info-delete {
+    margin-right: 70px;
+}
+
+ul > li > form > button {
+    cursor: pointer;
+}

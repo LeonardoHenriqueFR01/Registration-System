@@ -1,13 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="pt-br">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema de cadastro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/content.css">
+
 </head>
+
 <body>
     
-    <h1>OK</h1>
+    <div class="container">
+
+        <div class="content">
+
+            <div class="cadastro">
+
+                <div class="header">
+
+                    <a href="{{ url_for('main.home') }}" onclick="return confirm('Você tem certeza que deseja sair?')">
+                        <span class="material-symbols-outlined">reply</span>
+                    </a>
+                
+                    <h1>Cadastrar</h1>
+
+                </div>   
+                
+                <form action="/cadastrar_user" method="POST" autocomplete="off">
+
+                    <div class="name-container">
+                        <input type="text" name="name" id="name" required minlength="3" placeholder=" ">
+                        <label for="name">Nome</label>
+                    </div>
+
+                    <div class="age-container">
+                        <input type="number" name="age" id="age" required minlength="1" placeholder=" ">
+                        <label for="age">Idade</label>
+                    </div>
+
+                    <button id="btn_client_cadastro" onclick="get_spin()">Cadastrar</button>
+
+                    <div class="load" id="load">
+
+                        <button>
+                            <div class="spin"></div>
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="cadastrados">
+
+                <h1>Cadastrados</h1>
+
+                <div class="title">
+                    <h1>Nome</h1>
+                    <h1>Idade</h1>
+                    <h1 id="delete">Delete</h1>
+                </div>
+
+            {% for user in users %}
+
+                <div class="info-users">
+
+                    <ul>
+                        <li class="info-name">{{ user.name }}</li>
+                    </ul>
+
+                    <ul>
+                        <li class="info-age">{{ user.age }}</li>
+                    </ul>
+
+                    <ul>
+                        <li class="info-delete">
+                            <form action="{{ url_for('main.deletar_user', user_id=user.id) }}" method="POST">
+                                <button type="submit" onclick="return confirm('Deseja excluir esse usuário?')">
+                                    <span class="material-symbols-outlined">delete</span>
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+
+                </div>
+
+            {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../static/js/content.js"></script>
 
 </body>
+
 </html>

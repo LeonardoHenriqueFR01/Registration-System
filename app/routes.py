@@ -3,6 +3,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from .models import db, User, Info
 from flask_login import login_user, login_required, current_user
 from sqlalchemy import or_
+from time import sleep
 
 
 main = Blueprint('main', __name__)
@@ -47,6 +48,8 @@ def cadastro():
             db.session.add(user)
             db.session.commit()
 
+            sleep(3)
+
             return redirect(url_for('main.sucess'))
     
     return render_template('index.html', error=error_message)
@@ -65,6 +68,7 @@ def login():
         user_exist = User.query.filter(User.name == name, User.email == email).first()
 
         if user_exist and check_password_hash(user_exist.password, password):
+            sleep(3)
             login_user(user_exist)
             return redirect(url_for('main.sucess'))
         else:
@@ -87,6 +91,25 @@ def cadastrar_user():
         db.session.add(new_info)
         db.session.commit()
 
+        sleep(2)
+
         return redirect(url_for('main.sucess'))
     
     return render_template('content.html')
+
+
+# Rota para deletar um usuário específico
+@main.route('/deletar_user/<int:user_id>', methods=['POST'])
+@login_required
+def deletar_user(user_id):
+    # Verifica se o usuário logado é o mesmo que cadastrou o usuário a ser deletado
+    user_info = Info.query.filter_by(id=user_id, user_id=current_user.id).first()
+
+    if user_info:
+        # Deleta as informações do usuário
+        db.session.delete(user_info)
+        db.session.commit()
+
+        return redirect(url_for('main.sucess'))  # Redireciona para a página de sucesso (ou onde desejar)
+    else:
+        return "Você não tem permissão para deletar esse usuário.", 403  # Caso o usuário tente deletar alguém que não cadastrou
