@@ -34,10 +34,16 @@ def cadastro():
         password = request.form.get('password')  # Obtém a senha do formulário
 
         # Verifica se já existe um usuário com o mesmo nome ou e-mail
-        user_exists = User.query.filter(or_(User.name == name, User.email == email)).first()
+        user_by_name = User.query.filter_by(User.name == name)
+        user_by_email = User.query.filter_by(User.email == email)
 
-        if user_exists:  # Se o usuário já existe, exibe uma mensagem de erro
-            error_message = "Nome ou Email já cadastrado! Tente novamente"
+        if user_by_name:
+            error_message = 'Nome já cadastrado!'
+        
+        elif user_by_email:
+            error_message = 'Email já cadastrado!'
+
+        if error_message:  # Se o usuário já existe, exibe uma mensagem de erro
             return render_template('index.html', error_cadastro=error_message)  # Retorna para a página inicial com o erro
         
         else:
